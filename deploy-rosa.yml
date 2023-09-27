@@ -1,0 +1,15 @@
+# This playbook will be used by Ansible Automation Platform to deploy a `spoke` ROSA instance
+- name: Deploy a spoke ROSA instance
+  hosts: localhost
+  connection: local
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Run preflight checks
+      import_role: rh.rosa.preflight
+    - name: Deploy ROSA
+      import_role: rh.rosa.deploy
+    - name: Conduct Day1 Ops
+      import_role: rh.rosa.day1
+    - name: Conduct Day2 Ops
+      import_role: rh.rosa.day2

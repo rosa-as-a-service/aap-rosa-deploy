@@ -1,2 +1,4 @@
 collections:
- - name: kubernetes.core
+  - name: kubernetes.core
+  - name: rh.rosa
+    src: https://github.com/rosa-as-a-service/rh.rosa.git
