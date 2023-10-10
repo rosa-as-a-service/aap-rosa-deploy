@@ -1,8 +1,16 @@
 {
 	"folders": [
 		{
-			"path": ".."
+			"path": "."
+		},
+		{
+			"path": "../rh.rosa"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"*.yaml": "yaml",
+			"*.yml": "yaml"
+		}
+	}
 }

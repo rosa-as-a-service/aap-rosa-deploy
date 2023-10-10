@@ -15,6 +15,7 @@ components:
       memoryLimit: 6Gi
       cpuRequest: 250m
       cpuLimit: 2000m
+      sourceMapping: /projects
       args:
         - sleep
         - infinity
