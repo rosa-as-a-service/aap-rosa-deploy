@@ -1,5 +1,5 @@
 ---
 rosa_version: "4.13.13"
 rosa_vpc: "hub"
-ros_subnet_1: "hub-2a"
+rosa_subnet_1: "hub-2a"
 rosa_subnet_2: "hub-2b"
