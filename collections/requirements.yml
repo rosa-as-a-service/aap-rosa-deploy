@@ -1,6 +1,5 @@
 collections:
   - name: cloud.terraform
-  - name: commmunity.general
+  - name: community.general
   - name: kubernetes.core
-  - name: rh.rosa
-    src: https://github.com/rosa-as-a-service/rh.rosa.git
+  - name: git+https://github.com/rosa-as-a-service/rh.rosa.git
