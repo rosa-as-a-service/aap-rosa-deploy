@@ -2,4 +2,5 @@ collections:
   - name: cloud.terraform
   - name: amazon.cloud
   - name: kubernetes.core
-  - name: git+https://github.com/rosa-as-a-service/rh.rosa.git
+  - name: git@github.com:rosa-as-a-service/rh.rosa.git
+    scm: git
