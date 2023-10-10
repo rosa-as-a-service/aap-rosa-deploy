@@ -2,7 +2,13 @@ schemaVersion: 2.2.0
 metadata:
   name: aap-rosa-deploy-ansible
 components:
-  - name: tooling-container
+  - name: developer-tools
+    container:
+      image: 'registry.redhat.io/devspaces/udi-rhel8:latest'
+      memoryLimit: 1G
+      mountSources: true
+      sourceMapping: /projects
+  - name: ansible-tools
     container:
       image: quay.io/devspaces/ansible-creator-ee:3.8
       memoryRequest: 256M
