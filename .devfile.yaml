@@ -1,0 +1,14 @@
+schemaVersion: 2.2.0
+metadata:
+  name: aap-rosa-deploy-ansible
+components:
+  - name: tooling-container
+    container:
+      image: quay.io/devspaces/ansible-creator-ee:latest
+      memoryRequest: 256M
+      memoryLimit: 6Gi
+      cpuRequest: 250m
+      cpuLimit: 2000m
+      args:
+        - sleep
+        - infinity
