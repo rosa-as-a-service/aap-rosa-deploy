@@ -10,7 +10,8 @@
 	"settings": {
 		"files.associations": {
 			"*.yaml": "yaml",
-			"*.yml": "yaml"
-		}
+			"*.yml": "ansible"
+		},
+		"ansible.python.interpreterPath": "/usr/local/bin/python"
 	}
 }
