@@ -8,7 +8,8 @@
     # - name: Run preflight checks
     #   import_role: rh.rosa.preflight
     - name: Deploy ROSA
-      import_role: rh.rosa.create
+      ansible.builtin.import_role:
+        name: rh.rosa.create
     # - name: Bootstrap Hub
     #   import_role: rh.rosa.bootstrap_hub
     # - name: Conduct Day1 Ops

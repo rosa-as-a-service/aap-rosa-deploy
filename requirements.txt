@@ -1,2 +1,5 @@
 ansible-core
 kubernetes
+botocore
+boto3
+jsonpatch
