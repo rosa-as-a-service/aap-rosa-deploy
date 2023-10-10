@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "redhat.ansible",
+        "redhat.yaml",
+        "redhat.vscode-openshift-connector",
+    ]
+}
