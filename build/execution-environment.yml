@@ -5,3 +5,5 @@ images:
     name: registry.redhat.io/ansible-automation-platform-23/ee-supported-rhel8:latest
 dependencies:
   python: requirements.txt
+options:
+  package_manager_path: /usr/bin/microdnf
