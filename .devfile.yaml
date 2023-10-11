@@ -10,7 +10,7 @@ components:
       sourceMapping: /projects
   - name: ansible-tools
     container:
-      image: quay.io/devspaces/ansible-creator-ee:3.8
+      image: quay.io/ahussey/aap-rosa-ee:latest
       memoryRequest: 256M
       memoryLimit: 6Gi
       cpuRequest: 250m
