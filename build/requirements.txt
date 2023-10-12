@@ -1,5 +1,6 @@
 ansible-core
-kubernetes
+awscli
 botocore
 boto3
 jsonpatch
+kubernetes
