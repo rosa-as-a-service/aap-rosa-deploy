@@ -1,14 +1,12 @@
 ---
 rosa_version: "4.13.13"
-rosa_vpc_name: "hub-vpc"
-rosa_vpc_id: "vpc-008103836ca59fe0a"
-rosa_subnets:
-  - name: "hub-subnet-private-ap-southeast-2a"
-    id: "subnet-0bc8db6b056059cb8"
-    availability_zone: "ap-southeast-2a"
-  # - name: "hub-subnet-public-ap-southeast-2a"
-  #   id: "subnet-0b09460292bc0c0d6"
-  #   availability_zone: "ap-southeast-2a"
-rosa_cluster_name: hub
+rosa_vpc_name: "hub-egress"
+rosa_vpc_id: "vpc-06f8f2317d9323fcd"
 rosa_vpc_cidr: 10.0.0.0/24
+rosa_worker_nodes: 5
+rosa_subnets:
+  - name: "hub-egress-private-2a"
+    id: "subnet-0de3d4efb7c41b5a3"
+    availability_zone: "ap-southeast-2a"
+rosa_cluster_name: hub
 rosa_aws_account_id: "525091975562"

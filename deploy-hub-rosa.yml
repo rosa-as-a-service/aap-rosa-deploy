@@ -11,12 +11,6 @@
     - name: Deploy ROSA
       ansible.builtin.import_role:
         name: rh.rosa.create
-    # - name: Bootstrap Hub
-    #   ansible.builtin.import_role:
-    #     name: rh.rosa.bootstrap_hub
-    # - name: Conduct Day1 Ops
-    #   ansible.builtin.import_role:
-    #     name: rh.rosa.day1
-    # - name: Conduct Day2 Ops
-    #   ansible.builtin.import_role:
-    #     name: rh.rosa.day2
+
+- name: Bootstrap hub
+  ansible.builtin.import_playbook: rh.rosa.bootstrap_hub
