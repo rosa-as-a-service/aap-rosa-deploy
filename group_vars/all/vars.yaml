@@ -3,7 +3,8 @@ rosa_version: "4.13.13"
 rosa_vpc_name: "hub-egress"
 rosa_vpc_id: "vpc-06f8f2317d9323fcd"
 rosa_vpc_cidr: 10.0.0.0/24
-rosa_worker_nodes: 5
+rosa_worker_nodes: 2
+rosa_worker_instance_type: m5.4xlarge
 rosa_subnets:
   - name: "hub-egress-private-2a"
     id: "subnet-0de3d4efb7c41b5a3"
