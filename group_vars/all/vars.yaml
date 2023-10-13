@@ -11,3 +11,4 @@ rosa_subnets:
     availability_zone: "ap-southeast-2a"
 rosa_cluster_name: hub
 rosa_aws_account_id: "525091975562"
+rosa_admin_username: "cluster-admin"
