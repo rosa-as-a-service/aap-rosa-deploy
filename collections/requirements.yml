@@ -1,7 +1,8 @@
 ---
 collections:
-  - name: cloud.terraform
   - name: amazon.cloud
+  - name: cloud.terraform
+  - name: community.okd
   - name: kubernetes.core
   - name: git@github.com:rosa-as-a-service/rh.rosa.git
     scm: git

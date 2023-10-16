@@ -1,13 +1,20 @@
 # aap-rosa-deploy
 Repository that hosts all the Ansible Automation Platform components, required to deploy ROSA
 
+> **Note:**
+>
+> If using Private subnets, you **will** need a bastion/jump host.
+>
+> For standalone, that will mean updating the inventory file to include the bastion host details.
+> For AAP, that will mean deploy an Execution Node and specifying that for `bootstrap_X` plays.
+
 ## Setup
 
 ### Standalone
 
 ```bash
 ansible-galaxy collection install -r collections/requirements.yml
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r build/requirements.txt
 ```
 
 ### AAP

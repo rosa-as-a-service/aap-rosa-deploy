@@ -1,10 +1,32 @@
-# This playbook will be used by Ansible Automation Platform to deploy a `spoke` ROSA instance
+# This playbook will be used by Ansible Automation Platform to deploy a `hub` ROSA instance
+
+# - name: Ensure bastion has correct Python packages installed (local testing only)
+#   hosts: bastion
+#   gather_facts: false
+#   tasks:
+#     - name: Install pip
+#       ansible.builtin.dnf:
+#         name:
+#           - python3-pip
+#           - git
+#       become: true
+
+#     - name: Pip install
+#       ansible.builtin.pip:
+#         name:
+#           - ansible-core
+#           - awscli
+#           - botocore
+#           - boto3
+#           - jsonpatch
+#           - kubernetes
+#       become: false
+
 - name: Run preflight checks
   ansible.builtin.import_playbook: rh.rosa.preflight
 
 - name: Deploy a hub ROSA instance
   hosts: localhost
-  connection: local
   become: false
   gather_facts: false
   tasks:
@@ -14,3 +36,4 @@
     - name: Bootstrap hub
       ansible.builtin.import_role:
         name: rh.rosa.bootstrap_hub
+      delegate_to: bastion
