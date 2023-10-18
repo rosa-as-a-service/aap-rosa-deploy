@@ -4,29 +4,27 @@ rosa_version: "4.13.13"
 rosa_aws_account_id: "993000923118"
 rosa_admin_username: "cluster-admin"
 
+
 ### Hub Variables
-rosa_vpc_name: "hub-egress"
-rosa_vpc_id: "vpc-089e3ea803f954c39"
-rosa_cluster_name: hub
-rosa_vpc_cidr: 10.0.0.0/24
-rosa_worker_nodes: 2
-rosa_worker_instance_type: m5.4xlarge
-rosa_subnets:
+rosa_hub_vpc_name: "hub-egress"
+rosa_hub_vpc_id: "vpc-089e3ea803f954c39"
+rosa_hub_cluster_name: hub
+rosa_hub_vpc_cidr: 10.0.0.0/24
+rosa_hub_worker_nodes: 2
+rosa_hub_worker_instance_type: m5.4xlarge
+rosa_hub_subnets:
   - name: "hub-egress-private-2a"
     id: "subnet-09128d35a01a01c85"
     availability_zone: "ap-southeast-2a"
-boostrap_hub_api_url: https://api.hub.575m.p1.openshiftapps.com:6443
-
 
 ### Spoke Variables
-# rosa_vpc_name: "spoke1-private-rosa"
-# rosa_vpc_id: "vpc-08ac368958be36e9a"
-# rosa_vpc_cidr: 10.1.0.0/16
-# rosa_cluster_name: spoke
-# rosa_worker_nodes: 2
-# rosa_worker_instance_type: m5.2xlarge
-# rosa_subnets:
-#   - name: "spoke1-rosa-2a"
-#     id: "subnet-05063c0225816c631"
-#     availability_zone: "ap-southeast-2a"
-# boostrap_spoke_api_url: ''
+rosa_spoke_vpc_name: "spoke1-private-rosa"
+rosa_spoke_vpc_id: "vpc-08ac368958be36e9a"
+rosa_spoke_vpc_cidr: 10.1.0.0/16
+rosa_spoke_cluster_name: spoke1
+rosa_spoke_worker_nodes: 2
+rosa_spoke_worker_instance_type: m5.2xlarge
+rosa_spoke_subnets:
+  - name: "spoke1-rosa-2a"
+    id: "subnet-05063c0225816c631"
+    availability_zone: "ap-southeast-2a"

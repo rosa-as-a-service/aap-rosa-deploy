@@ -8,6 +8,7 @@
 #         name:
 #           - python3-pip
 #           - git
+#           - jq
 #       become: true
 
 #     - name: Pip install
@@ -21,18 +22,5 @@
 #           - kubernetes
 #       become: false
 
-- name: Run preflight checks
-  ansible.builtin.import_playbook: rh.rosa.preflight
-
-- name: Deploy a spoke ROSA instance
-  hosts: localhost
-  become: false
-  gather_facts: false
-  tasks:
-    - name: Deploy ROSA
-      ansible.builtin.import_role:
-        name: rh.rosa.create
-    # - name: Bootstrap spoke
-    #   ansible.builtin.import_role:
-    #     name: rh.rosa.bootstrap_spoke
-    #   delegate_to: bastion
+- name: Deploy Spoke ROSA
+  ansible.builtin.import_playbook: rh.rosa.deploy_spoke_rosa

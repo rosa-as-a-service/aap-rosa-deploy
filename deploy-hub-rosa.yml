@@ -9,6 +9,7 @@
 #         name:
 #           - python3-pip
 #           - git
+#           - jq
 #       become: true
 
 #     - name: Pip install
@@ -22,18 +23,5 @@
 #           - kubernetes
 #       become: false
 
-- name: Run preflight checks
-  ansible.builtin.import_playbook: rh.rosa.preflight
-
-- name: Deploy a hub ROSA instance
-  hosts: localhost
-  become: false
-  gather_facts: false
-  tasks:
-    - name: Deploy ROSA
-      ansible.builtin.import_role:
-        name: rh.rosa.create
-    - name: Bootstrap hub
-      ansible.builtin.import_role:
-        name: rh.rosa.bootstrap_hub
-      delegate_to: bastion
+- name: Deploy Hub ROSA
+  ansible.builtin.import_playbook: rh.rosa.deploy_hub_rosa
