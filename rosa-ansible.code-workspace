@@ -5,12 +5,15 @@
 		},
 		{
 			"path": "../rh.rosa"
+		},
+		{
+			"path": "../hub-rosa-gitops"
 		}
 	],
 	"settings": {
 		"files.associations": {
 			"*.yaml": "yaml",
-			"*.yml": "ansible"
+			"*.yml": "yaml"
 		},
 		"ansible.python.interpreterPath": "/usr/local/bin/python"
 	}
