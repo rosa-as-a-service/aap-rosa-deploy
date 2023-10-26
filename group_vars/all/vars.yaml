@@ -1,11 +1,11 @@
 ---
 ### AWS Variables
 rosa_version: "4.13.13"
-rosa_aws_account_id: "901353702011"
 rosa_admin_username: "cluster-admin"
 
-
 ### Hub Variables
+rosa_hub_aws_account_id: "901353702011"
+rosa_hub_public_subnet_id: "subnet-09830bee6b297fcd7"
 rosa_hub_vpc_name: "hub-egress"
 rosa_hub_vpc_id: "vpc-001cb0a08e9f52cc5"
 rosa_hub_cluster_name: hub
@@ -18,6 +18,7 @@ rosa_hub_subnets:
     availability_zone: "ap-southeast-2a"
 
 ### Spoke Variables
+rosa_spoke_aws_account_id: "901353702011"
 rosa_spoke_vpc_name: "spoke1-private-rosa"
 rosa_spoke_vpc_id: "vpc-04f684913a553e9b9"
 rosa_spoke_vpc_cidr: 10.1.0.0/16
