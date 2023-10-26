@@ -6,6 +6,7 @@ rosa_admin_username: "cluster-admin"
 ### Hub Variables
 rosa_hub_aws_account_id: "901353702011"
 rosa_hub_public_subnet_id: "subnet-09830bee6b297fcd7"
+rosa_hub_private_subnet_id: "subnet-00472470bab02c4d9"
 rosa_hub_vpc_name: "hub-egress"
 rosa_hub_vpc_id: "vpc-001cb0a08e9f52cc5"
 rosa_hub_cluster_name: hub
