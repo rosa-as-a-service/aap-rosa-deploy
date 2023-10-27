@@ -1,0 +1,6 @@
+---
+- name: Run preflight checks
+  vars:
+    rosa_cluster_name: "{{ rosa_hub_cluster_name }}"
+    rosa_subnets: "{{ rosa_hub_subnets }}"
+  ansible.builtin.import_playbook: rh.rosa.preflight_hub

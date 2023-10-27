@@ -1,0 +1,20 @@
+---
+- name: Deploy a spoke ROSA instance
+  hosts: localhost
+  become: false
+  gather_facts: false
+  vars:
+    aws_account_id: "{{ aws_spoke_account_id }}"
+    aws_access_key_id: "{{ aws_spoke_access_key_id }}"
+    aws_secret_access_key: "{{ aws_spoke_secret_access_key }}"
+    rosa_vpc_name: "{{ rosa_spoke_vpc_name }}"
+    rosa_vpc_id: "{{ rosa_spoke_vpc_id }}"
+    rosa_cluster_name: "{{ rosa_spoke_cluster_name }}"
+    rosa_vpc_cidr: "{{ rosa_spoke_vpc_cidr }}"
+    rosa_worker_nodes: "{{ rosa_spoke_worker_nodes }}"
+    rosa_worker_instance_type: "{{ rosa_spoke_worker_instance_type }}"
+    rosa_subnets: "{{ rosa_spoke_subnets }}"
+  tasks:
+    - name: Bootstrap spoke
+      ansible.builtin.import_role:
+        name: rh.rosa.bootstrap_spoke

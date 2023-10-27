@@ -1,0 +1,6 @@
+---
+- name: Run preflight checks
+  vars:
+    rosa_cluster_name: "{{ rosa_spoke_cluster_name }}"
+    rosa_subnets: "{{ rosa_spoke_subnets }}"
+  ansible.builtin.import_playbook: rh.rosa.preflight_spoke
