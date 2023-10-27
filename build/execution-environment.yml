@@ -7,3 +7,7 @@ dependencies:
   python: requirements.txt
 options:
   package_manager_path: /usr/bin/microdnf
+additional_build_steps:
+  append_base: |
+    RUN microdnf install -y wget
+    RUN wget -qO- "https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux.tar.gz" | tar xvz --no-same-owner -C /usr/local/bin
