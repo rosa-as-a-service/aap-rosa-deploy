@@ -1,0 +1,3 @@
+---
+- name: Destroy Spoke ROSA
+  ansible.builtin.import_playbook: rh.rosa.destroy_spoke_rosa
