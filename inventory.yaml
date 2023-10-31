@@ -1,6 +1,5 @@
 all:
   hosts:
-    localhost:
     bastion:
       ansible_host: ec2-3-27-28-21.ap-southeast-2.compute.amazonaws.com
       ansible_user: ec2-user
