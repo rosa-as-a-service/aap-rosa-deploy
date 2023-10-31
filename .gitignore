@@ -1,3 +1,5 @@
 venv/
 terraform_1.6.0_linux_amd64.zip
 build/context
+org.json
+configure_aap.yaml

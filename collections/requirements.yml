@@ -1,6 +1,7 @@
 ---
 collections:
   - name: amazon.cloud
+  - name: awx.awx
   - name: cloud.terraform
   - name: community.okd
   - name: community.general

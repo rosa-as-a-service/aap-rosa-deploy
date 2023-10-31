@@ -1,5 +1,6 @@
 ansible-core
 awscli
+awxkit
 botocore
 boto3
 jsonpatch

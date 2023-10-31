@@ -26,3 +26,4 @@ rosa_hub_subnets:
 # rosa_spoke_subnets:
 #   - name: "spoke1-rosa-2a"
 #     id: "subnet-0deb5bc9a04af0c47"
+# spoke_bastion: bastion-spoke1
