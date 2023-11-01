@@ -3,13 +3,33 @@
   hosts: localhost
   become: false
   gather_facts: false
+  vars:
+    rosa_cluster_name: "{{ rosa_spoke_cluster_name }}"
+    aws_access_key_id: "{{ aws_spoke_access_key_id }}"
+    aws_secret_access_key: "{{ aws_spoke_secret_access_key }}"
   tasks:
-    - name: Wait for DNS verification to succeed
+    - name: Ensure AWS long lived credentials are configured on the bastion
       ansible.builtin.shell:
         cmd: |
-          export AWS_DEFAULT_PROFILE=rosa_{{ rosa_cluster_name }}
-          aws ec2 describe-vpc-endpoint-services | jq -r '.[][] | select(.Tags[].Value == "{{ rosa_cluster_name }}") | .PrivateDnsNameVerificationState' 2>/dev/null"
+          export AWS_DEFAULT_PROFILE=rosa_
+          aws configure set region ap-southeast-2 --profile rosa_{{ rosa_cluster_name }}
+          aws configure set aws_access_key_id "{{ aws_access_key_id }}" --profile rosa_{{ rosa_cluster_name }}
+          aws configure set aws_secret_access_key "{{ aws_secret_access_key }}" --profile rosa_{{ rosa_cluster_name }}
+          aws configure set profile rosa_{{ rosa_cluster_name }}
+          rosa login --token "{{ rosa_token }}"
+      no_log: true
+      changed_when: false
+    - name: Wait for DNS verification to succeed
+      environment:
+        AWS_DEFAULT_PROFILE: "rosa_{{ rosa_cluster_name }}"
+      ansible.builtin.shell:
+        cmd: |
+          aws ec2 describe-vpc-endpoint-services --filters "Name=tag:cluster-name,Values={{ rosa_cluster_name }}" | jq -r '.ServiceDetails[].PrivateDnsNameVerificationState'
       register: dns_verification_result
       retries: 60
       delay: 10
-      until: "'verified' in dns_verification_result.stdout_lines"
+      until: "'verified' in dns_verification_result.stdout"
+    - name: Wait for DNS and connections to propogate
+      ansible.builtin.pause:
+        seconds: 120
+        prompt: Waiting for DNS and PrivateLink connections to propogate
