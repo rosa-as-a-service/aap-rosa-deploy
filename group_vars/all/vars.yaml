@@ -17,13 +17,25 @@ rosa_hub_subnets:
     id: "subnet-0413e196335e83ffa"
 
 ### Spoke Variables
+## Spoke1
 # rosa_spoke_aws_account_id: "901353702011"
-# rosa_spoke_vpc_name: "spoke1-private-rosa"
+# rosa_spoke_vpc_name: "spoke1"
 # rosa_spoke_vpc_cidr: 10.1.0.0/16
 # rosa_spoke_cluster_name: spoke1
 # rosa_spoke_worker_nodes: 2
 # rosa_spoke_worker_instance_type: m5.2xlarge
 # rosa_spoke_subnets:
 #   - name: "spoke1-rosa-2a"
-#     id: "subnet-0deb5bc9a04af0c47"
-# spoke_bastion: bastion-spoke1
+#     id: "subnet-08aabbc59d15da107"
+
+## Spoke2
+# spoke_bastion: bastion-spoke2
+# rosa_spoke_aws_account_id: "901353702011"
+# rosa_spoke_vpc_name: "spoke2"
+# rosa_spoke_vpc_cidr: 10.2.0.0/16
+# rosa_spoke_cluster_name: spoke2
+# rosa_spoke_worker_nodes: 2
+# rosa_spoke_worker_instance_type: m5.2xlarge
+# rosa_spoke_subnets:
+#   - name: "spoke2-rosa-2a"
+#     id: "subnet-05a2adbadd5e8158b"
