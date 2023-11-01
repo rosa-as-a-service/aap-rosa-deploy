@@ -1,3 +1,0 @@
----
-- name: Destroy Hub ROSA
-  ansible.builtin.import_playbook: rh.rosa.destroy_hub_rosa
