@@ -1,0 +1,32 @@
+---
+- name: Export AAP config
+  hosts: localhost
+  gather_facts: false
+  become: false
+  tasks:
+    - name: Export data
+      awx.awx.export:
+        assets:
+          all: true
+        controller_host: "{{ aap_controller_url }}"
+        controller_username: "admin"
+        controller_password: "{{ aap_controller_password }}"
+      delegate_to: bastion
+      register: exported_org
+    - name: Dump to file
+      ansible.builtin.copy:
+        content: "{{ exported_org.assets }}"
+        dest: org.json
+
+- name: Configure AAP
+  hosts: localhost
+  gather_facts: false
+  become: false
+  tasks:
+    - name: Import data
+      awx.awx.import:
+        assets: "{{ lookup('file', 'org.json') | from_json() }}"
+        controller_host: "{{ aap_controller_url }}"
+        controller_username: "admin"
+        controller_password: "{{ aap_controller_password }}"
+      delegate_to: bastion
