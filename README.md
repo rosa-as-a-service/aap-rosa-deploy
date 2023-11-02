@@ -5,8 +5,22 @@ Repository that hosts all the Ansible Automation Platform components, required t
 >
 > If using Private subnets, you **will** need a bastion/jump host.
 >
-> For standalone, that will mean updating the inventory file to include the bastion host details.
-> For AAP, that will mean deploy an Execution Node and specifying that for `bootstrap_X` plays.
+> That will mean updating the inventory file to include the bastion host details, and using the `rh.rosa.deploy_spoke_rosa_with_bastion` playbook - ensuring that the `spoke_bastion` variable is defined and is equal to the name of the bastion host in the inventory
+>
+> EG:
+> ```yaml
+> # group_vars/all/vars.yaml
+> spoke_bastion: bastion-spoke1
+> ```
+> ```yaml
+> # inventory.yaml
+> all:
+>   hosts:
+>     bastion-spoke1:
+>       ansible_host: <bastion-spoke-ip>
+>       ansible_user: ec2-user
+>       ansible_ssh_private_key_file: "~/.ssh/bastion.pem"
+> ```
 
 ## Setup
 
@@ -19,11 +33,8 @@ python3 -m pip install -r build/requirements.txt
 
 ### AAP
 
-1. Create credentials
-2. Create job template
-3. Create workflow using job templates
-4. Ensure correct custome Execution Environment is used
-    1. quay.io/ahussey/aap-rosa-ee
+1. Run the `configure_aap.yaml` playbook to import the jobs, workflows, credential types
+2. Update each of the credentials in AAP that the previous step created
 
 ### Prerequisites
 
