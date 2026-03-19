@@ -6,7 +6,7 @@ rosa_admin_username: "cluster-admin"
 ### Hub Variables
 rosa_hub_cluster_name: hub
 rosa_hub_worker_nodes: 2
-rosa_hub_worker_instance_type: m5.4xlarge
+rosa_hub_worker_instance_type: m7g.4xlarge
 rosa_hub_subnets:
   - name: "hub-egress-private-2a"
     id: "subnet-0413e196335e83ffa"
@@ -15,7 +15,7 @@ rosa_hub_subnets:
 ## Spoke1
 # rosa_spoke_cluster_name: spoke1
 # rosa_spoke_worker_nodes: 2
-# rosa_spoke_worker_instance_type: m5.2xlarge
+# rosa_spoke_worker_instance_type: m7g.2xlarge
 # rosa_spoke_subnets:
 #   - name: "spoke1-rosa-2a"
 #     id: "subnet-08aabbc59d15da107"
@@ -24,7 +24,7 @@ rosa_hub_subnets:
 # spoke_bastion: bastion-spoke2
 # rosa_spoke_cluster_name: spoke2
 # rosa_spoke_worker_nodes: 2
-# rosa_spoke_worker_instance_type: m5.2xlarge
+# rosa_spoke_worker_instance_type: m7g.2xlarge
 # rosa_spoke_subnets:
 #   - name: "spoke2-rosa-2a"
 #     id: "subnet-05a2adbadd5e8158b"
