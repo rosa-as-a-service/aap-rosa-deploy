@@ -1,15 +1,10 @@
 ---
 ### AWS Variables
-rosa_version: "4.13.13"
+rosa_version: "4.18.0"
 rosa_admin_username: "cluster-admin"
 
 ### Hub Variables
-rosa_hub_aws_account_id: "901353702011"
-rosa_hub_public_subnet_id: "subnet-0931e5c940fcf84ae"
-rosa_hub_private_subnet_id: "subnet-0413e196335e83ffa"
-rosa_hub_vpc_name: "hub"
 rosa_hub_cluster_name: hub
-rosa_hub_vpc_cidr: 10.0.0.0/24
 rosa_hub_worker_nodes: 2
 rosa_hub_worker_instance_type: m5.4xlarge
 rosa_hub_subnets:
@@ -18,9 +13,6 @@ rosa_hub_subnets:
 
 ### Spoke Variables
 ## Spoke1
-# rosa_spoke_aws_account_id: "901353702011"
-# rosa_spoke_vpc_name: "spoke1"
-# rosa_spoke_vpc_cidr: 10.1.0.0/16
 # rosa_spoke_cluster_name: spoke1
 # rosa_spoke_worker_nodes: 2
 # rosa_spoke_worker_instance_type: m5.2xlarge
@@ -30,9 +22,6 @@ rosa_hub_subnets:
 
 ## Spoke2
 # spoke_bastion: bastion-spoke2
-# rosa_spoke_aws_account_id: "901353702011"
-# rosa_spoke_vpc_name: "spoke2"
-# rosa_spoke_vpc_cidr: 10.2.0.0/16
 # rosa_spoke_cluster_name: spoke2
 # rosa_spoke_worker_nodes: 2
 # rosa_spoke_worker_instance_type: m5.2xlarge
